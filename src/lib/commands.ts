@@ -1,5 +1,10 @@
 import { DIRECTIONS, Robot, Surface } from "../types";
 
+const ERROR_MESSAGES = {
+  INVALID_MOVE: 'Invalid move',
+  NOT_PLACED: 'Robot is not yet placed.'
+}
+
 export const isMoveValid = (surface: Surface, xPosition: number, yPosition: number): boolean => {
   return !(
     xPosition < 0 ||
@@ -11,7 +16,7 @@ export const isMoveValid = (surface: Surface, xPosition: number, yPosition: numb
 
 export const turnRight = (robot: Robot): Robot => {
   if (!robot.isPlaced) {
-    console.error('Robot is not yet placed.');
+    console.error(ERROR_MESSAGES.NOT_PLACED);
     return robot;
   };
 
@@ -30,7 +35,7 @@ export const turnRight = (robot: Robot): Robot => {
 
 export const turnLeft = (robot: Robot): Robot => {
   if (!robot.isPlaced) {
-    console.error('Robot is not yet placed.');
+    console.error(ERROR_MESSAGES.NOT_PLACED);
     return robot;
   };
 
@@ -49,7 +54,7 @@ export const turnLeft = (robot: Robot): Robot => {
 
 export const moveForward = (robot: Robot, surface: Surface): Robot => {
   if (!robot.isPlaced) {
-    console.error('Robot is not yet placed.');
+    console.error(ERROR_MESSAGES.NOT_PLACED);
     return robot;
   };
 
@@ -74,7 +79,7 @@ export const moveForward = (robot: Robot, surface: Surface): Robot => {
       yPosition: y,
     }
   } else {
-    console.error('Invalid move');
+    console.error(ERROR_MESSAGES.INVALID_MOVE);
     return robot;
   }
 };
@@ -90,7 +95,7 @@ export const placeRobot = (
       isPlaced: true,
     }
   } else {
-    console.error('Invalid move');
+    console.error(ERROR_MESSAGES.INVALID_MOVE);
     return robot;
   }
 }
