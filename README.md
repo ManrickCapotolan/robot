@@ -16,3 +16,6 @@ Note that you have to enter commands one at a time.
 
 ## Test
 Run `yarn test` to run unit tests.
+
+## Sample Output:
+![Sample Output](https://github.com/ManrickCapotolan/robot/blob/main/ToyRobotSample.gif?raw=true)
